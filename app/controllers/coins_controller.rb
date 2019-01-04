@@ -1,5 +1,6 @@
 class CoinsController < ApplicationController
   before_action :set_coin, only: [:show, :update, :destroy]
+  before_action :authenticate_user, only: [:create, :update, :destroy]
 
   # GET /coins
   def index
