@@ -1,6 +1,6 @@
 class CoinsController < ApplicationController
   before_action :set_coin, only: [:show, :update, :destroy]
-  before_action :authenticate_user, only: [:create, :update, :destroy]
+  before_action :authenticate_user, only: [:create, :update, :destroy, :mine]
 
   # GET /coins
   def index
@@ -37,6 +37,12 @@ class CoinsController < ApplicationController
   # DELETE /coins/1
   def destroy
     @coin.destroy
+  end
+
+  # GET /coins/mine
+  def mine
+    @coins = current_user.posts
+    render json: @coins
   end
 
   private
