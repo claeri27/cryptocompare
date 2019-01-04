@@ -46,6 +46,6 @@ class CoinsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def coin_params
-      params.require(:coin).permit(:name, :user_id)
+      params.require(:coin).permit(:name)
     end
 end

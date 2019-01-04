@@ -17,3 +17,5 @@ User.create([
     password: 'admin123'
   }
 ])
+
+Coin.create([{name: 'Bitcoin'}])

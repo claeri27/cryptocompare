@@ -12,7 +12,7 @@ class CoinsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create coin" do
     assert_difference('Coin.count') do
-      post coins_url, params: { coin: { name: @coin.name, user_id: @coin.user_id } }, as: :json
+      post coins_url, params: { coin: { name: @coin.name } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class CoinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update coin" do
-    patch coin_url(@coin), params: { coin: { name: @coin.name, user_id: @coin.user_id } }, as: :json
+    patch coin_url(@coin), params: { coin: { name: @coin.name } }, as: :json
     assert_response 200
   end
 
