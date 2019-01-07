@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Nav from  './components/Nav/Nav';
 
 class App extends Component {
   constructor(){
@@ -54,6 +55,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Nav />
       {this.state.users.map(user => <div>{user.username}</div>)}
       {this.state.users.map(user => <div>{user.email}</div>)}
       {this.state.coins.map(coin => <div>{coin.name}</div>)}
