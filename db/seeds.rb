@@ -10,9 +10,11 @@ User.destroy_all
 
 User.create([
   {
+    username: 'bilbo',
     email: 'bilbo@shire.gov',
     password: 'bilbo'
   }, {
+    username: 'admin',
     email: 'admin',
     password: 'admin123'
   }
