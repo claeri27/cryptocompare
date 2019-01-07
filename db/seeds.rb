@@ -18,4 +18,5 @@ User.create([
   }
 ])
 
+Coin.destroy_all
 Coin.create([{name: 'Bitcoin'}])
