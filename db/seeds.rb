@@ -21,4 +21,7 @@ User.create([
 ])
 
 Coin.destroy_all
-Coin.create([{name: 'Bitcoin'}])
+
+resp = RestClient.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?sort=market_cap&start=1&limit=50&CMC_PRO_API_KEY=da086f1b-d5e9-488d-a533-1afe215d03bc')
+newresp = JSON.parse(resp)["data"]
+newresp.map { |coin| Coin.create([{name: coin["name"], symbol: coin["symbol"]}])}

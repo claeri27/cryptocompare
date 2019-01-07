@@ -5,6 +5,7 @@ class CoinsController < ApplicationController
   # GET /coins
   def index
     @coins = Coin.all
+    # symbols = @coins.map{|coin|coin.symbol}.join(",")
 
     render json: @coins
   end
@@ -53,6 +54,6 @@ class CoinsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def coin_params
-      params.require(:coin).permit(:name)
+      params.require(:coin).permit(:symbol, :name)
     end
 end
