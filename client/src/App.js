@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Nav from  './components/Nav/Nav';
+import CryptoList from './components/CryptoList/CryptoList';
 require('dotenv').config();
 
 class App extends Component {
@@ -27,13 +28,11 @@ class App extends Component {
 
   async getUsers() {
     const resp = await axios.get('/users');
-    console.log(resp.data);
     return resp.data;
   }
 
   async getCoins() {
     const resp = await axios.get('/coins');
-    console.log(resp.data);
     return resp.data;
   }
 
@@ -43,7 +42,8 @@ class App extends Component {
       <Nav />
       {this.state.users.map(user => <div>{user.username}</div>)}
       {this.state.users.map(user => <div>{user.email}</div>)}
-      {this.state.coins.map(coin => <div>Name: {coin.name} Sym: {coin.symbol}Price: {coin.current_price} 24hr Volume: {coin.volume_24h} 1hChange: {coin.percent_change_1h} 24hrChange: {coin.percent_change_24h} 7dChange: {coin.percent_change_7d} MarketCap: {coin.market_cap}</div>)}
+      <CryptoList />
+      {/*{this.state.coins.map(coin => <div>Name: {coin.name} Sym: {coin.symbol}Price: {coin.current_price} 24hr Volume: {coin.volume_24h} 1hChange: {coin.percent_change_1h} 24hrChange: {coin.percent_change_24h} 7dChange: {coin.percent_change_7d} MarketCap: {coin.market_cap}</div>)}*/}
       {/*{this.state.exchanges.map(exchange => <div>{exchange.name}</div>)}*/}
       </div>
     );
