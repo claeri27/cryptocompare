@@ -1,39 +1,34 @@
 #crypto-list {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid blue;
+  /* border: 1px solid blue; */
+  width: 600px;
+  margin: 0 auto;
 }
 
 .coin-item-container {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  font-size: .8em;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  display: grid;
+  grid-template-columns:60px 40px 100px 100px 50px 50px 50px 100px;
+  grid-template-rows: auto;
+  border: 1px solid black;
+  font-size: 8px;
+  text-align: left;
+  align-content: center;
+  justify-content: center;
 }
 
 .coin-item {
+  align-self: center;
   padding: 10px;
-  border: 2px solid red;
-  font-size: .8em;
-  width: 100px;
+  /* margin: 10px; */
+  /* border: 1px solid black; */
 }
 
 #coin-name {
 }
 
 #coin-symbol {
-  width: 60px;
+}
+
+#coin-price {
 }
 
 #coin-volume {
