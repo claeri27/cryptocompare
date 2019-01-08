@@ -23,5 +23,6 @@ User.create([
 Coin.destroy_all
 
 resp = RestClient.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?sort=market_cap&start=1&limit=50&CMC_PRO_API_KEY=da086f1b-d5e9-488d-a533-1afe215d03bc')
+puts resp
 newresp = JSON.parse(resp)["data"]
-newresp.map { |coin| Coin.create([{name: coin["name"], symbol: coin["symbol"]}])}
+newresp.map { |coin| Coin.create([{name: coin["name"], symbol: coin["symbol"], current_price: coin["quote"]["USD"]["price"], volume_24h: coin["quote"]["USD"]["volume_24h"], percent_change_1h: coin["quote"]["USD"]["percent_change_1h"], percent_change_24h: coin["quote"]["USD"]["percent_change_24h"], percent_change_7d: coin["quote"]["USD"]["percent_change_7d"], market_cap: coin["quote"]["USD"]["market_cap"]}])}

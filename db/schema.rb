@@ -18,6 +18,12 @@ ActiveRecord::Schema.define(version: 2019_01_04_203436) do
   create_table "coins", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
+    t.string "current_price"
+    t.string "volume_24h"
+    t.string "market_cap"
+    t.string "percent_change_1h"
+    t.string "percent_change_24h"
+    t.string "percent_change_7d"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
