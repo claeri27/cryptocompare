@@ -34,19 +34,31 @@ export default class CryptoList extends Component {
 
   render() {
     return(
-      <div id="crypto-list">
-        {this.state.coins.map(coin => (
-          <div className="coin-item-container">
-            <div className="coin-item" id="coin-name">{coin.name} </div>
-            <div className="coin-item" id="coin-symbol">{coin.symbol} </div>
-            <div className="coin-item" id="coin-price">{coin.current_price} </div>
-            <div className="coin-item" id="coin-volume">{coin.volume_24h} </div>
-            <div className="coin-item" id="coin-change-1hr">{coin.percent_change_1h} </div>
-            <div className="coin-item" id="coin-change-24hr">{coin.percent_change_24h} </div>
-            <div className="coin-item" id="coin-change-7d">{coin.percent_change_7d} </div>
-            <div className="coin-item" id="coin-market-cap">{coin.market_cap}</div>
+      <div id="crypto-list-wrapper">
+        <div id="crypto-list">
+          <div id="crypto-list-headers">
+            <div className="coin-item-header" id="name-header">NAME</div>
+            <div className="coin-item-header" id="symbol-header">SYM</div>
+            <div className="coin-item-header" id="volume-header">24H VOLUME</div>
+            <div className="coin-item-header" id="market-cap-header">MARKET CAP</div>
+            <div className="coin-item-header" id="change-1hr-header">1HR</div>
+            <div className="coin-item-header" id="change-24hr-header">24HR</div>
+            <div className="coin-item-header" id="change-7d-header">7D</div>
+            <div className="coin-item-header" id="price-header">PRICE(USD)</div>
           </div>
-        ))}
+          {this.state.coins.map(coin => (
+            <div className="coin-item-container">
+              <div className="coin-item" id="coin-name">{coin.name} </div>
+              <div className="coin-item" id="coin-symbol">{coin.symbol} </div>
+              <div className="coin-item" id="coin-volume">{Math.round(coin.volume_24h)} </div>
+              <div className="coin-item" id="coin-market-cap">{Math.round(coin.market_cap)}</div>
+              <div className="coin-item" id="coin-change-1hr">{Math.round(coin.percent_change_1h * 100) / 100}%</div>
+              <div className="coin-item" id="coin-change-24hr">{Math.round(coin.percent_change_24h * 100) / 100}%</div>
+              <div className="coin-item" id="coin-change-7d">{Math.round(coin.percent_change_7d * 100) / 100}%</div>
+              <div className="coin-item" id="coin-price">${Math.round(coin.current_price * 100) / 100}</div>
+            </div>
+          ))}
+        </div>
       </div>
     )
   }
