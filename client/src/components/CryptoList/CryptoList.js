@@ -55,7 +55,7 @@ export default class CryptoList extends Component {
               <div className="coin-item" id="coin-change-1hr">{Math.round(coin.percent_change_1h * 100) / 100}%</div>
               <div className="coin-item" id="coin-change-24hr">{Math.round(coin.percent_change_24h * 100) / 100}%</div>
               <div className="coin-item" id="coin-change-7d">{Math.round(coin.percent_change_7d * 100) / 100}%</div>
-              <div className="coin-item" id="coin-price">${Math.round(coin.current_price * 100) / 100}</div>
+              <div className="coin-item" id="coin-price">${Math.round(coin.current_price * 10000) / 10000}</div>
             </div>
           ))}
         </div>

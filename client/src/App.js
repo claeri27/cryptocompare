@@ -3,48 +3,65 @@ import './App.css';
 import axios from 'axios';
 import Nav from  './components/Nav/Nav';
 import CryptoList from './components/CryptoList/CryptoList';
+import jwtDecode from 'jwt-decode'
+import HomePage from './components/HomePage/HomePage';
 require('dotenv').config();
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
-      coins: [],
-      users: [],
-      exchanges: [],
-      assets: []
+      token: (localStorage.getItem('token') !== null)
+        ? localStorage.getItem('token')
+        : null,
+      user: (localStorage.getItem('token') !== null)
+        ? jwtDecode(localStorage.getItem('token'))
+        : {},
+      view: (localStorage.getItem('token') !== null)
+        ? "loggedIn"
+        : "welcome"
     }
-    this.getUsers = this.getUsers.bind(this);
-    this.getCoins = this.getCoins.bind(this);
+    this.setToken = this.setToken.bind(this);
+    this.setLoggedUser = this.setLoggedUser.bind(this);
   }
 
   async componentDidMount() {
-    const users = await this.getUsers();
-    const coins = await this.getCoins();
-    // console.log('results: ', users, coins);
-    // console.log('exchanges: ', crypto);
-    this.setState({ users, coins })
+    console.log(this.state.token, this.state.user);
   }
 
-  async getUsers() {
-    const resp = await axios.get('/users');
-    return resp.data;
+  async setToken(token) {
+    await this.setState((prevState) => ({
+      ...prevState,
+      token: token,
+      view: 'loggedIn'
+    }))
   }
 
-  async getCoins() {
-    const resp = await axios.get('/coins');
-    return resp.data;
+  async setLoggedUser(user) {
+    await this.setState((prevState) => ({
+      ...prevState,
+      user: user
+    }))
+  }
+
+  getView() {
+    switch (this.state.view) {
+      case "loggedIn":
+        return (<div><Nav changeView={this.changeView} setToken={this.setToken} setLoggedUser={this.setLoggedUser} token={this.state.token} user={this.state.user} view={this.state.view}/><CryptoList/></div>);
+      case "welcome":
+        return (<div><Nav changeView={this.changeView} setToken={this.setToken} setLoggedUser={this.setLoggedUser} token={this.state.token} user={this.state.user} view={this.state.view}/><CryptoList/></div>);
+      default:
+    }
+  }
+
+  changeView = (view) => {
+    this.setState({view: view})
   }
 
   render() {
     return (
       <div className="App">
-      <Nav />
-      {/*{this.state.users.map(user => <div>{user.username}</div>)}*/}
-      {/*{this.state.users.map(user => <div>{user.email}</div>)}*/}
-      <CryptoList />
-      {/*{this.state.coins.map(coin => <div>Name: {coin.name} Sym: {coin.symbol}Price: {coin.current_price} 24hr Volume: {coin.volume_24h} 1hChange: {coin.percent_change_1h} 24hrChange: {coin.percent_change_24h} 7dChange: {coin.percent_change_7d} MarketCap: {coin.market_cap}</div>)}*/}
-      {/*{this.state.exchanges.map(exchange => <div>{exchange.name}</div>)}*/}
+        {this.getView()}
       </div>
     );
   }
