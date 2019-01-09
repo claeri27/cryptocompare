@@ -33,5 +33,6 @@ json.map { |coin| Coin.create([{
   percent_change_1h: coin["quote"]["USD"]["percent_change_1h"],
   percent_change_24h: coin["quote"]["USD"]["percent_change_24h"],
   percent_change_7d: coin["quote"]["USD"]["percent_change_7d"],
-  market_cap: coin["quote"]["USD"]["market_cap"]
+  market_cap: coin["quote"]["USD"]["market_cap"],
+  cmc_rank: coin["cmc_rank"]
 }])}

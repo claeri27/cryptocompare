@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_01_04_203436) do
     t.string "percent_change_1h"
     t.string "percent_change_24h"
     t.string "percent_change_7d"
+    t.string "cmc_rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

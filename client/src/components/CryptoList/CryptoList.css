@@ -6,9 +6,11 @@
 
 #crypto-list-headers {
   display: grid;
-  grid-template-columns:60px 40px 110px 110px 60px 60px 60px 100px;
+  grid-template-columns: 30px 60px 40px 110px 110px 60px 60px 60px 100px;
   grid-template-rows: auto;
-  font-size: 8px;
+  font-size: 10px;
+  align-content: center;
+  justify-content: center;
 }
 
 .coin-item-header {
@@ -20,10 +22,10 @@
 
 .coin-item-container {
   display: grid;
-  grid-template-columns:60px 40px 110px 110px 60px 60px 60px 100px;
+  grid-template-columns: 30px 60px 40px 110px 110px 60px 60px 60px 100px;
   grid-template-rows: auto;
   /* border: 1px solid black; */
-  font-size: 8px;
+  font-size: 10px;
   /* text-align: left; */
   align-content: center;
   justify-content: center;

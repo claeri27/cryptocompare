@@ -9,6 +9,7 @@ class CreateCoins < ActiveRecord::Migration[5.2]
       t.string :percent_change_1h
       t.string :percent_change_24h
       t.string :percent_change_7d
+      t.string :cmc_rank
 
       t.timestamps
     end

@@ -84,7 +84,7 @@ export default class Nav extends Component {
         <React.Fragment>
           {console.log(this.props)}
           <div id="nav-buttons-wrapper">
-            <div className='nav-buttons' id="userPortal" onClick={() => {
+            <div className='nav-buttons' id="login-button" onClick={() => {
                 this.props.changeView('userPage')
               }}>
               <div id="nav-portal-button">{
@@ -94,7 +94,7 @@ export default class Nav extends Component {
                     : '')
                 }</div>
             </div>
-            <div className='nav-buttons' id='logout-button' onClick={() => {
+            <div className='nav-buttons' id='register-button' onClick={() => {
                 this.props.setLoggedUser({});
                 this.props.setToken(null);
                 this.props.changeView('welcome');
