@@ -82,15 +82,15 @@ export default class Nav extends Component {
     } else if (this.props.token !== null) {
       return (
         <React.Fragment>
-          {console.log(this.props.token)}
+          {console.log(this.props)}
           <div id="nav-buttons-wrapper">
             <div className='nav-buttons' id="userPortal" onClick={() => {
                 this.props.changeView('userPage')
               }}>
               <div id="nav-portal-button">{
                   (
-                    this.props.user.username
-                    ? this.props.user.username.toUpperCase()
+                    this.props.user !== null
+                    ? 'P'
                     : '')
                 }</div>
             </div>

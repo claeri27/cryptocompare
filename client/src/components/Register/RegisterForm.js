@@ -56,7 +56,7 @@ export default class RegisterForm extends Component {
       console.log(resp);
       localStorage.setItem('token', auth.data.jwt);
       this.props.setToken(auth.data.jwt)
-      this.props.setLoggedUser(this.state.user.username);
+      this.props.setLoggedUser(resp.data.username);
     }
   }
 

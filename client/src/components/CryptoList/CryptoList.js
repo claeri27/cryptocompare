@@ -19,16 +19,40 @@ export default class CryptoList extends Component {
       // market_cap: []
     }
     this.getCoins = this.getCoins.bind(this);
+    this.getSortedCoins = this.getSortedCoins.bind(this);
   }
 
   async componentDidMount() {
     const coins = await this.getCoins();
     this.setState({coins})
+    console.log(this.state.coins);
   }
 
   async getCoins() {
     const resp = await axios.get('/coins');
     return resp.data;
+  }
+
+  async getSortedCoins(input) {
+    switch(input) {
+      case 'name':
+        console.log('test');
+        break;
+      case 'symbol':
+        break;
+      case 'market_cap':
+        break;
+      case 'change-1hr':
+        break;
+      case 'change-24hr':
+        break;
+      case 'change-7d':
+        break;
+      case 'price':
+        break;
+      default:
+        break;
+    }
   }
 
 
@@ -37,8 +61,8 @@ export default class CryptoList extends Component {
       <div id="crypto-list-wrapper">
         <div id="crypto-list">
           <div id="crypto-list-headers">
-            <div className="coin-item-header" id="name-header">NAME</div>
-            <div className="coin-item-header" id="symbol-header">SYM</div>
+            <div className="coin-item-header" id="name-header" onClick={() => this.getSortedCoins('name')}>NAME</div>
+            <div className="coin-item-header" id="symbol-header" onClick={() => this.getSortedCoins('symbol')}>SYM</div>
             <div className="coin-item-header" id="volume-header">24H VOLUME</div>
             <div className="coin-item-header" id="market-cap-header">MARKET CAP</div>
             <div className="coin-item-header" id="change-1hr-header">1HR</div>
