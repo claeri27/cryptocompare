@@ -35,14 +35,14 @@
 
 #login-button {
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
   margin-right: 10px;
   font-size: 10px;
 }
 
 #register-button {
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
   margin-left: 10px;
   font-size: 10px;
 }

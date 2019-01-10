@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './CryptoList.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft, faArrowRight, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faArrowLeft, faArrowRight, faSyncAlt)
 
 export default class CryptoList extends Component {
   constructor(props) {
@@ -14,6 +19,7 @@ export default class CryptoList extends Component {
     this.getSortedCoins = this.getSortedCoins.bind(this);
     this.getNextCoins = this.getNextCoins.bind(this);
     this.getPreviousCoins = this.getPreviousCoins.bind(this);
+    this.refreshPage = this.refreshPage.bind(this);
   }
 
   async componentDidMount() {
@@ -202,16 +208,20 @@ export default class CryptoList extends Component {
     }
   }
 
+  refreshPage() {
+    window.location.reload();
+  }
+
 
   render() {
     return(
       <div id="crypto-list-wrapper">
-        <div id="crypto-list-buttons">
-          <div id="refresh-button">R</div>
-          <div id="previous-button" onClick={async () => await this.getPreviousCoins()}>P</div>
-          <div id="next-button" onClick={async () => await this.getNextCoins()}>N</div>
-        </div>
         <div id="crypto-list">
+          <div id="crypto-list-buttons">
+            <div id="previous-button" onClick={async () => await this.getPreviousCoins()}><FontAwesomeIcon icon="arrow-left"/></div>
+            <div id="refresh-button"><FontAwesomeIcon icon="sync-alt"/></div>
+            <div id="next-button" onClick={async () => await this.getNextCoins()}><FontAwesomeIcon icon="arrow-right"/></div>
+          </div>
           <div id="crypto-list-headers">
             <div className="coin-item-header" id="rank-header" onClick={() => this.getSortedCoins('rank')}>#</div>
             <div className="coin-item-header" id="name-header" onClick={() => this.getSortedCoins('name')}>NAME</div>
@@ -236,6 +246,11 @@ export default class CryptoList extends Component {
               <div className="coin-item" id="coin-price">${Math.round(coin.current_price * 10000) / 10000}</div>
             </div>
           ))}
+        </div>
+        <div id="crypto-list-buttons">
+          <div id="previous-button" onClick={async () => await this.getPreviousCoins()}><FontAwesomeIcon icon="arrow-left"/></div>
+          <div id="refresh-button"><FontAwesomeIcon icon="sync-alt"/></div>
+          <div id="next-button" onClick={async () => await this.getNextCoins()}><FontAwesomeIcon icon="arrow-right"/></div>
         </div>
       </div>
     )

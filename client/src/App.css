@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: hsl(222, 11%, 18%);
+  color: white;
 }
 
 .App-logo {

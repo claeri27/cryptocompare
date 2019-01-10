@@ -26,6 +26,11 @@
   padding: 10px;
   font-weight: bold;
   border-bottom: 1px solid black ;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 
 .coin-item-container {
@@ -37,6 +42,7 @@
   /* text-align: left; */
   align-content: center;
   justify-content: center;
+  user-select: none;
 }
 
 .coin-item {
@@ -84,18 +90,32 @@
 
 #refresh-button {
   padding: 10px;
-  border: 1px solid #000;
   width: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #previous-button {
   padding: 10px;
-  border: 1px solid #000;
   width: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #next-button {
   padding: 10px;
-  border: 1px solid #000;
   width: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
