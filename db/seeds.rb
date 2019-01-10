@@ -16,7 +16,7 @@ User.create([
   }, {
     username: 'admin',
     email: 'admin',
-    password: 'admin123'
+    password: 'admin'
   }
 ])
 
