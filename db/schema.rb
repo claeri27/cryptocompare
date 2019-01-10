@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2019_01_10_001106) do
     t.string "current_price"
     t.bigint "volume_24h"
     t.bigint "market_cap"
-    t.string "percent_change_1h"
-    t.string "percent_change_24h"
-    t.string "percent_change_7d"
+    t.float "percent_change_1h"
+    t.float "percent_change_24h"
+    t.float "percent_change_7d"
     t.bigint "cmc_rank"
     t.string "page"
     t.datetime "created_at", null: false

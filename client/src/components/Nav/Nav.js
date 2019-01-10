@@ -3,6 +3,11 @@ import ReactModal from 'react-modal';
 import RegisterForm from '../Register/RegisterForm';
 import LoginForm from '../Login/LoginForm';
 import './Nav.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faYinYang } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faYinYang)
 
 const customStyles = {
   content: {
@@ -118,7 +123,7 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="nav">
-        <div id="title">CryptoCompare</div>
+        <div id="title">Crypto<FontAwesomeIcon icon="faYinYang"/>Compare</div>
         {this.getLoggedView()}
         {this.getNavView()}
       </div>)

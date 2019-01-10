@@ -6,8 +6,9 @@
 
 #crypto-list-headers {
   display: grid;
-  grid-template-columns: 30px 60px 40px 100px 100px 60px 60px 60px 100px;
+  grid-template-columns: 20px 60px 40px 100px 110px 60px 60px 60px 80px;
   grid-template-rows: auto;
+  grid-column-gap: 5px;
   font-size: 10px;
   align-content: center;
   justify-content: center;
@@ -39,8 +40,9 @@
 
 .coin-item-container {
   display: grid;
-  grid-template-columns: 30px 60px 40px 100px 100px 60px 60px 60px 100px;
+  grid-template-columns: 20px 60px 40px 100px 110px 60px 60px 60px 80px;
   grid-template-rows: auto;
+  grid-column-gap: 5px;
   /* border: 1px solid black; */
   font-size: 10px;
   /* text-align: left; */
@@ -48,16 +50,25 @@
   justify-content: center;
   user-select: none;
   border-top: 1px solid grey;
+  height: 45px;
 }
 
 .coin-item {
   align-self: center;
-  padding: 10px;
+  padding: 8px;
   /* margin-top: 10px;
   margin-bottom: 10px; */
   /* text-align: left; */
   /* margin: 10px; */
   /* border: 1px solid black; */
+}
+
+.coin-item.coin-red {
+  background: #990000;
+}
+
+.coin-item.coin-green {
+  background: #238f23;
 }
 
 #coin-name {
@@ -67,8 +78,11 @@
 #coin-symbol {
 }
 
+#price-header {
+  text-align: center;
+}
 #coin-price {
-  text-align: left;
+  /* text-align: left; */
 }
 
 #coin-volume {

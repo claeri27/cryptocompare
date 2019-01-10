@@ -35,20 +35,38 @@
 
 #login-button {
   padding: 5px;
-  border: 1px solid white;
-  margin-right: 10px;
+  /* border: 1px solid white; */
+  margin: 0;
   font-size: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#login-button:hover {
+  color:red;
 }
 
 #register-button {
   padding: 5px;
-  border: 1px solid white;
-  margin-left: 10px;
+  /* border: 1px solid white; */
+  margin: 0;
   font-size: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#register-button:hover {
+  color:red;
 }
 
 #title {
   padding: 10px;
   font-size: 50px;
   font-family: 'Lobster', cursive;
+  cursor: pointer;
+  user-select: none;
+}
+
+#title:hover {
+  color: red;
 }
