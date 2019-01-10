@@ -13,6 +13,14 @@
   justify-content: center;
 }
 
+#name-header {
+  text-align: left;
+}
+
+#price-header {
+  text-align: left;
+}
+
 .coin-item-header {
   align-self: center;
   padding: 10px;
@@ -40,13 +48,14 @@
 }
 
 #coin-name {
-  /* text-align: left; */
+  text-align: left;
 }
 
 #coin-symbol {
 }
 
 #coin-price {
+  text-align: left;
 }
 
 #coin-volume {
@@ -59,4 +68,34 @@
 }
 
 #coin-change-7d {
+}
+
+#crypto-list-buttons {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#refresh-button {
+  padding: 10px;
+  border: 1px solid #000;
+  width: 20px;
+}
+
+#previous-button {
+  padding: 10px;
+  border: 1px solid #000;
+  width: 20px;
+}
+
+#next-button {
+  padding: 10px;
+  border: 1px solid #000;
+  width: 20px;
 }

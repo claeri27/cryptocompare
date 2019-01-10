@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_04_203436) do
+ActiveRecord::Schema.define(version: 2019_01_10_001106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 2019_01_04_203436) do
     t.string "name"
     t.string "symbol"
     t.string "current_price"
-    t.string "volume_24h"
-    t.string "market_cap"
+    t.bigint "volume_24h"
+    t.bigint "market_cap"
     t.string "percent_change_1h"
     t.string "percent_change_24h"
     t.string "percent_change_7d"
-    t.string "cmc_rank"
+    t.bigint "cmc_rank"
+    t.string "page"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

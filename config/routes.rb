@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  post 'next', to: 'coins#next', as: 'next'
+  post 'previous', to: 'coins#previous', as: 'previous'
+
   get 'rank', to: 'coins#rank', as: 'rank'
   get 'rank_down', to: 'coins#rank_down', as: 'rank_down'
   get 'name', to: 'coins#name', as: 'name'

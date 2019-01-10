@@ -7,10 +7,13 @@ export default class CryptoList extends Component {
     super(props);
     this.state = {
       coins: [],
-      pressed: false
+      pressed: false,
+      page: 0
     }
     this.getCoins = this.getCoins.bind(this);
     this.getSortedCoins = this.getSortedCoins.bind(this);
+    this.getNextCoins = this.getNextCoins.bind(this);
+    this.getPreviousCoins = this.getPreviousCoins.bind(this);
   }
 
   async componentDidMount() {
@@ -173,10 +176,41 @@ export default class CryptoList extends Component {
     }
   }
 
+  async getNextCoins() {
+    const resp = await axios.post('/next',
+      {
+        "page": this.state.page
+      }
+    )
+    await this.setState({
+      coins: resp.data,
+      page: this.state.page + 1
+    })
+  }
+
+  async getPreviousCoins() {
+    const resp = await axios.post('/previous',
+      {
+        "page": this.state.page
+      }
+    )
+    if(this.state.page !== 0) {
+      this.setState({
+        coins: resp.data,
+        page: this.state.page - 1
+      })
+    }
+  }
+
 
   render() {
     return(
       <div id="crypto-list-wrapper">
+        <div id="crypto-list-buttons">
+          <div id="refresh-button">R</div>
+          <div id="previous-button" onClick={async () => await this.getPreviousCoins()}>P</div>
+          <div id="next-button" onClick={async () => await this.getNextCoins()}>N</div>
+        </div>
         <div id="crypto-list">
           <div id="crypto-list-headers">
             <div className="coin-item-header" id="rank-header" onClick={() => this.getSortedCoins('rank')}>#</div>

@@ -22,9 +22,9 @@ User.create([
 
 Coin.destroy_all
 
-resp = RestClient.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?sort=market_cap&start=1&limit=50&CMC_PRO_API_KEY=da086f1b-d5e9-488d-a533-1afe215d03bc')
-puts resp
+resp = RestClient.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?sort=market_cap&start=1&limit=1000&CMC_PRO_API_KEY=da086f1b-d5e9-488d-a533-1afe215d03bc')
 json = JSON.parse(resp)["data"]
+p json
 json.map { |coin| Coin.create([{
   name: coin["name"],
   symbol: coin["symbol"],
@@ -34,5 +34,8 @@ json.map { |coin| Coin.create([{
   percent_change_24h: coin["quote"]["USD"]["percent_change_24h"],
   percent_change_7d: coin["quote"]["USD"]["percent_change_7d"],
   market_cap: coin["quote"]["USD"]["market_cap"],
-  cmc_rank: coin["cmc_rank"]
+  cmc_rank: coin["cmc_rank"],
+  page: ((coin["cmc_rank"] - 1)/50).floor
 }])}
+
+p Coin.all
