@@ -10,26 +10,18 @@ class CoinsController < ApplicationController
   end
 
   def next
-    if params[:page] == 0
-      start_num = 50
-    elsif params[:page] == 1
-      start_num = 100
-    else
-      start_num = (params[:page] * 50)
-    end
     @coins = Coin.all.offset((params[:page] + 1) * 50).limit(50)
     render json: @coins
   end
 
   def previous
     start_num = ((params[:page] - 1) * 50)
-    p start_num
     @coins = Coin.all.offset(start_num).limit(50)
     render json: @coins
   end
 
   def rank
-    @coins = Coin.all.limit(50).order(:cmc_rank)
+    @coins = Coin.all.order(:cmc_rank)
     render json: @coins
   end
 
