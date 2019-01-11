@@ -166,6 +166,7 @@ export default function CryptoList(props) {
     <div id="crypto-list-wrapper">
       <div id="crypto-list">
         <div id="crypto-list-buttons">
+          <button onClick={() => getCoins()}>REFRESH COINS</button>
           <div id="previous-button" onClick={async () => await getPreviousCoins()}><FontAwesomeIcon icon="arrow-left"/></div>
           <div id="refresh-button"><FontAwesomeIcon icon="sync-alt"/></div>
           <div id="next-button" onClick={async () => await getNextCoins()}><FontAwesomeIcon icon="arrow-right"/></div>
