@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-const BASE_URL = `http://localhost:3000`;
+const BASE_URL = `/api`;
 
 export default class LoginForm extends Component {
   constructor(props) {

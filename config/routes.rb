@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  scope '/api' do
   root 'home#index'
   post 'user_token' => 'user_token#create'
   resources :coins
@@ -31,4 +32,5 @@ Rails.application.routes.draw do
   get 'current_price_down', to: 'coins#current_price_down', as: 'current_price_down'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
 end

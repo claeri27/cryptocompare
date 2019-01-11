@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_01_10_001106) do
   create_table "coins", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
-    t.string "current_price"
+    t.float "current_price"
     t.bigint "volume_24h"
     t.bigint "market_cap"
     t.float "percent_change_1h"

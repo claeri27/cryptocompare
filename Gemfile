@@ -1,3 +1,4 @@
+# gem 'dotenv-rails', groups: [:development, :test]
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -16,6 +17,8 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 gem 'rest-client'
 gem 'bcrypt', '~> 3.1.7'
+# gem 'dotenv-rails'
+gem 'figaro'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

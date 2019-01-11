@@ -3,7 +3,7 @@ import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import './RegisterForm.css';
 
-const BASE_URL = `http://localhost:3000`
+const BASE_URL = '/api'
 
 export default class RegisterForm extends Component {
   constructor(props) {
