@@ -1,0 +1,36 @@
+#crypto-list	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#crypto-list {$/;"	function	line:1
+#crypto-list-headers	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#crypto-list-headers {$/;"	function	line:7
+#name-header	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#name-header {$/;"	function	line:17
+#price-header	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#price-header {$/;"	function	line:21
+.coin-item-header	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^.coin-item-header {$/;"	function	line:25
+.coin-item-header:hover	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^.coin-item-header:hover {$/;"	function	line:37
+.coin-item-container	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^.coin-item-container {$/;"	function	line:41
+.coin-item	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^.coin-item {$/;"	function	line:56
+.coin-item.coin-red	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^.coin-item.coin-red {$/;"	function	line:66
+.coin-item.coin-green	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^.coin-item.coin-green {$/;"	function	line:70
+#coin-name	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#coin-name {$/;"	function	line:74
+#coin-symbol	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#coin-symbol {$/;"	function	line:78
+#price-header	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#price-header {$/;"	function	line:81
+#coin-price	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#coin-price {$/;"	function	line:84
+#coin-volume	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#coin-volume {$/;"	function	line:88
+#coin-change-1hr	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#coin-change-1hr {$/;"	function	line:91
+#coin-change-24hr	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#coin-change-24hr {$/;"	function	line:94
+#coin-change-7d	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#coin-change-7d {$/;"	function	line:97
+#crypto-list-buttons	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#crypto-list-buttons {$/;"	function	line:100
+#refresh-button	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#refresh-button {$/;"	function	line:112
+#refresh-button:hover	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#refresh-button:hover {$/;"	function	line:124
+#previous-button	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#previous-button {$/;"	function	line:128
+#previous-button:hover	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#previous-button:hover {$/;"	function	line:138
+#next-button	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#next-button {$/;"	function	line:142
+#next-button:hover	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.css	/^#next-button:hover {$/;"	function	line:152
+constructor	/Users/chris/wdi-project4/cryptocompare/client/src/App.js	/^  constructor() {$/;"	function	line:12
+state.token	/Users/chris/wdi-project4/cryptocompare/client/src/App.js	/^    this.state = {$/;"	property	line:14
+getView	/Users/chris/wdi-project4/cryptocompare/client/src/App.js	/^  getView() {$/;"	function	line:48
+switch	/Users/chris/wdi-project4/cryptocompare/client/src/App.js	/^    switch (this.state.view) {$/;"	function	line:49
+render	/Users/chris/wdi-project4/cryptocompare/client/src/App.js	/^  render() {$/;"	function	line:68
+CryptoList	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^export default function CryptoList(props) {$/;"	function	line:12
+switch	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^    switch (input) {$/;"	function	line:27
+getNextCoins	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  async function getNextCoins() {$/;"	function	line:139
+getPreviousCoins	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  async function getPreviousCoins() {$/;"	function	line:145
+refreshPage	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  function refreshPage() {$/;"	function	line:153
+refreshPage	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  function refreshPage() {$/;"	function	line:153

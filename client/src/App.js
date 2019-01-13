@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
-import './App.css';
-import axios from 'axios';
-import Nav from  './components/Nav/Nav';
-import CryptoList from './components/CryptoList/CryptoList';
-import jwtDecode from 'jwt-decode'
-import HomePage from './components/HomePage/HomePage';
-require('dotenv').config();
+import React, {Component} from "react";
+import "./App.css";
+import axios from "axios";
+import Nav from "./components/Nav/Nav";
+import CryptoList from "./components/CryptoList/CryptoList";
+import jwtDecode from "jwt-decode";
+import HomePage from "./components/HomePage/HomePage";
+import styled from "styled-components";
+require("dotenv").config();
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      token: (localStorage.getItem('token') !== null)
-        ? localStorage.getItem('token')
+      token: localStorage.getItem("token") !== null
+        ? localStorage.getItem("token")
         : null,
-      user: (localStorage.getItem('token') !== null)
-        ? jwtDecode(localStorage.getItem('token'))
+      user: localStorage.getItem("token") !== null
+        ? jwtDecode(localStorage.getItem("token"))
         : {},
-      view: (localStorage.getItem('token') !== null)
+      view: localStorage.getItem("token") !== null
         ? "loggedIn"
         : "welcome"
-    }
+    };
     this.setToken = this.setToken.bind(this);
     this.setLoggedUser = this.setLoggedUser.bind(this);
   }
@@ -30,40 +31,42 @@ class App extends Component {
   }
 
   async setToken(token) {
-    await this.setState((prevState) => ({
+    await this.setState(prevState => ({
       ...prevState,
       token: token,
-      view: 'loggedIn'
-    }))
+      view: "loggedIn"
+    }));
   }
 
   async setLoggedUser(user) {
-    await this.setState((prevState) => ({
+    await this.setState(prevState => ({
       ...prevState,
       user: user
-    }))
+    }));
   }
 
   getView() {
     switch (this.state.view) {
       case "loggedIn":
-        return (<div><Nav changeView={this.changeView} setToken={this.setToken} setLoggedUser={this.setLoggedUser} token={this.state.token} user={this.state.user} view={this.state.view}/><CryptoList/></div>);
+        return (<div>
+          <Nav changeView={this.changeView} setToken={this.setToken} setLoggedUser={this.setLoggedUser} token={this.state.token} user={this.state.user} view={this.state.view}/>
+          <CryptoList/>
+        </div>);
       case "welcome":
-        return (<div><Nav changeView={this.changeView} setToken={this.setToken} setLoggedUser={this.setLoggedUser} token={this.state.token} user={this.state.user} view={this.state.view}/><CryptoList/></div>);
+        return (<div>
+          <Nav changeView={this.changeView} setToken={this.setToken} setLoggedUser={this.setLoggedUser} token={this.state.token} user={this.state.user} view={this.state.view}/>
+          <CryptoList/>
+        </div>);
       default:
     }
   }
 
-  changeView = (view) => {
-    this.setState({view: view})
-  }
+  changeView = view => {
+    this.setState({view: view});
+  };
 
   render() {
-    return (
-      <div className="App">
-        {this.getView()}
-      </div>
-    );
+    return <div className="App">{this.getView()}</div>;
   }
 }
 
