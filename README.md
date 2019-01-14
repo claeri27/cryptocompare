@@ -41,3 +41,23 @@ react-hooks | passport/jwt |jsonwebtoken
 ### Wireframes
 ![Wireframe 1](./Wireframes/Wireframe1.jpg)
 ![Wireframe 2](./Wireframes/Wireframe2.jpg)
+
+### Code Example
+Built page with hooks
+```
+export default function CryptoList(props) {
+  // set state for { coins, pressed, page }
+  const [coins, setCoins] = useState([]);
+  const [pressed, setPressed] = useState(false);
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    getCoins();
+  }, []);
+
+  // get coins from backend
+  const getCoins = async () => {
+    const resp = await axios.get(URL + "/coins");
+    setCoins(resp.data);
+  }
+```
