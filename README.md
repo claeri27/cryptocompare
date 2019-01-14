@@ -1,7 +1,7 @@
 # CryptoCompare
 Welcome to CryptoCompare! This app will allow you to view the current price for a list of cryptocurrencies.
 
-https://cryptocompare1777.herokuapp.com/
+https://cryptocompare29.herokuapp.com/
 
 ![List](./Wireframes/List.png)
 

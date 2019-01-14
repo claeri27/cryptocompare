@@ -9,7 +9,6 @@ const URL = "/api";
 
 library.add(faArrowLeft, faArrowRight, faSyncAlt);
 
-//test line
 export default function CryptoList(props) {
   // set state for { coins, pressed, page }
   const [coins, setCoins] = useState([]);
