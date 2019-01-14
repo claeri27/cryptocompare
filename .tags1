@@ -5,8 +5,8 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 CryptoList	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^export default function CryptoList(props) {$/;"	function	line:12
-switch	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^    switch (input) {$/;"	function	line:27
-getNextCoins	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  async function getNextCoins() {$/;"	function	line:139
-getPreviousCoins	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  async function getPreviousCoins() {$/;"	function	line:145
-refreshPage	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  function refreshPage() {$/;"	function	line:153
-refreshPage	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  function refreshPage() {$/;"	function	line:153
+switch	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^    switch (input) {$/;"	function	line:30
+getNextCoins	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  async function getNextCoins() {$/;"	function	line:142
+getPreviousCoins	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  async function getPreviousCoins() {$/;"	function	line:148
+refreshPage	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  function refreshPage() {$/;"	function	line:156
+refreshPage	/Users/chris/wdi-project4/cryptocompare/client/src/components/CryptoList/CryptoList.js	/^  function refreshPage() {$/;"	function	line:156

@@ -10,6 +10,7 @@ const URL = "/api";
 library.add(faArrowLeft, faArrowRight, faSyncAlt);
 
 export default function CryptoList(props) {
+  // set state for { coins, pressed, page }
   const [coins, setCoins] = useState([]);
   const [pressed, setPressed] = useState(false);
   const [page, setPage] = useState(0);
@@ -18,11 +19,13 @@ export default function CryptoList(props) {
     getCoins();
   }, []);
 
+  // get coins from backend
   const getCoins = async () => {
     const resp = await axios.get(URL + "/coins");
     setCoins(resp.data);
   }
 
+  // sort coins
   const getSortedCoins = async input => {
     switch (input) {
       case "rank":
